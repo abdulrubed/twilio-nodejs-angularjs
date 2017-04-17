@@ -3,7 +3,7 @@
     
     var Configuration = {
     	siteUrl: 'http://localhost:2149',
-    	twillio: {
+    	twilio: {
     		number: '',
     		sid: '',
     		token: ''
