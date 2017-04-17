@@ -1,0 +1,22 @@
+ <div class="container" >
+            <form id="contact" name="messageForm" novalidate>
+                <h3>Send SMS</h3>
+                <fieldset>
+                    <input placeholder="Phone Number" type="text" name="phone_number" ng-model="messageFormObj.phone_number" minlength="10" maxlength="10" required>
+                    <div ng-show="messageForm.$submitted || messageForm.phone_number.$touched">
+                        <span class="text-danger" ng-show="messageForm.phone_number.$error.required">Phone number is required.</span>
+                        <span class="text-danger" ng-show="messageForm.phone_number.$error.minlength">Min 10 digits allowed.</span>
+                        <span class="text-danger" ng-show="messageForm.phone_number.$error.maxlength">Max 10 digits allowed.</span>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <textarea placeholder="Type your message here...." name="message" ng-model="messageFormObj.message" required></textarea>
+                    <div ng-show="messageForm.$submitted || messageForm.message.$touched">
+                        <span class="text-danger" ng-show="messageForm.message.$error.required">Message is required.</span>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" ng-click="sendMessage()" ng-disabled="messageSendBtn">Send</button>
+                </fieldset>
+            </form>
+        </div>
